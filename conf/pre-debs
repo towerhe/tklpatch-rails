@@ -1,0 +1,24 @@
+#!/bin/bash -ex
+source $(dirname $0)/functions
+
+# Rename the host
+HOSTNAME=rails
+echo "$HOSTNAME" > /etc/hostname
+sed -i "s|127.0.1.1 \(.*\)|127.0.1.1 $HOSTNAME|" /etc/hosts
+
+# Use mirrors.163.com as the default apt repository
+rm -f /etc/apt/sources.list.d/*.list
+apt-get update
+
+# Install git and curl
+install git-core curl
+
+# Install ruby-1.9.2 and set it as default
+install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev
+rvm install 1.9.2
+rvm use 1.9.2 --default
+
+# Install passenger and nginx
+install libcurl4-openssl-dev
+/usr/bin/env gem install passenger --no-ri --no-rdoc
+/usr/bin/env ruby -S passenger-install-nginx-module --auto --auto-download --prefix=/usr/local/nginx

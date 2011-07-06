@@ -1,0 +1,7 @@
+#!/bin/bash -ex
+ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+update-rc.d nginx defaults
+
+# Clean up
+apt-get clean
+rm -fr /tmp/*
