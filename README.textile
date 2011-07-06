@@ -18,6 +18,7 @@ h1. Apply this appliance
 h1. Deploy rails application
 * Install the patched appliance
 * Copy your rails application to a directory
+* Init your rails application. For example, you may setup your database
 * Create a nginx conf under /etc/nginx/sites-available:
 <pre>
   <code>
