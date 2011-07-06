@@ -37,6 +37,6 @@ h1. Deploy rails application
 <pre>
   <code>
     $sudo ln -s /etc/nginx/sites-available/rails_app /etc/nginx/sites-enabled/rails_app
-    $sudo touch /path/to/your/app/tmp/restart.txt
+    $sudo /etc/init.d/nginx restart
   </code>
 </pre>
