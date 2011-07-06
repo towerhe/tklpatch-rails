@@ -1,0 +1,6 @@
+[submodule "patches/1_mysql"]
+	path = patches/1_mysql
+	url = http://github.com/towerhe/tklpatch-mysql.git
+[submodule "patches/2_rvm"]
+	path = patches/2_rvm
+	url = http://github.com/towerhe/tklpatch-rvm.git
