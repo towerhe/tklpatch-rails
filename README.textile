@@ -1,6 +1,6 @@
 h1. Description
 
-Rails Appliance is setup with rvm-head, ruby-1.9.2, passenger-3.0.7 and nginx-1.0.0.
+Rails Appliance is setup with rvm-head, ruby-1.9.2, passenger-3.0.8 and nginx-1.0.5.
 
 h1. Checkout from github and init
 <pre>
