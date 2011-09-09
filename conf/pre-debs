@@ -15,14 +15,12 @@ apt-get update
 echo 'LANG=zh_CN.UTF-8' > /etc/default/locale
 echo 'LC_ALL=zh_CN.UTF-8' >> /etc/default/locale
 
-[[ -s "/usr/local/rvm/scripts/rvm" ]] && source "/usr/local/rvm/scripts/rvm"
-
 # Install ruby-1.9.2 and set it as default
 install build-essential bison openssl libreadline6 libreadline6-dev curl git-core zlib1g zlib1g-dev libssl-dev libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev
-/usr/bin/env rvm install 1.9.2
-/usr/bin/env rvm use 1.9.2 --default
+/usr/local/rvm/bin/rvm install 1.9.2
+/usr/local/rvm/bin/rvm use 1.9.2 --default
 
 # Install passenger and nginx
 install libcurl4-openssl-dev
-/usr/bin/env gem install passenger --no-ri --no-rdoc
-/usr/bin/env ruby -S passenger-install-nginx-module --auto --auto-download --prefix=/usr/local/nginx
+/usr/bin/env /usr/local/rvm/bin/ruby -S gem install passenger --no-ri --no-rdoc
+/usr/bin/env /usr/local/rvm/bin/ruby -S passenger-install-nginx-module --auto --auto-download --prefix=/usr/local/nginx
